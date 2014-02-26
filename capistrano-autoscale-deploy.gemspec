@@ -5,7 +5,7 @@ require 'autoscale_deploy/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-autoscale-deploy"
-  spec.version       = Capistrano::AutoScaleDeploy::VERSION
+  spec.version       = AutoScaleDeploy::VERSION
   spec.authors       = ["Ami Mahloof"]
   spec.email         = ["ami.mahloof@gmail.com"]
   spec.summary       = %q{Get all instances in AutoScale group by AutoScale ec2 tag.}
