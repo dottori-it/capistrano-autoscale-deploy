@@ -54,4 +54,6 @@ module Capistrano
   end
 end
 
-extend Capistrano::AutoScaleDeploy
+if Capistrano::Configuration.instance
+  Capistrano::AutoScaleDeploy.load_into(Capistrano::Configuration.instance)
+end
