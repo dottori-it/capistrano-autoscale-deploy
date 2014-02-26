@@ -49,7 +49,8 @@ you can add more autoscale configs to deploy to multiple autoscale groups like a
 ## How this works
 
 This gem will fetch only running instances that have an autoscale tag name you specified
-it will then reject the role of :db and the primary => true for all servers found but the first one
+It will then reject the roles of :db and the :primary => true for all servers found **but the first one** 
+(from all autoscale groups you have specified such as using more then once the autoscale directive in your config - i.e cluster deploy)
 this is to make sure a single working task does not run in parallel
 
 you end up as if you defined the servers yourself like so:
