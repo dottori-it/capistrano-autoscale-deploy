@@ -32,7 +32,7 @@ module Capistrano
             begin
               connect_ec2
             rescue Exception => e
-              logger.error("unable to connect to ec2: #{e}")
+              logger.info("unable to connect to ec2: #{e}")
             end
             
             logger.info("found #{@ec2.instances.filter('tag-key', 'AutoScaleGroup').filter('tag-value', options[:AutoScaleGroup]).filter('instance-state-code', '16').count} servers for AutoScaleGroup: #{options[:AutoScaleGroup]} ")
