@@ -46,6 +46,19 @@ autoscale :AutoScaleGroup => 'name of your autoscale group (by Name tag)', :depl
 
 you can add more autoscale configs to deploy to multiple autoscale groups like a cluster
 
+## How this works
+
+This gem will fetch only running instances that have an autoscale tag name you specified
+it will then reject the role of :db and the primary => true for all servers found but the first one
+this is to make sure a single working task does not run in parallel
+
+you end up as if you defined the servers yourself like so:
+
+````ruby
+server ip_address1, :app :db, :web, :primary => true
+server ip_address2, :app, :web
+server ip_address3, :app, :web
+````
 
 ## Contributing
 
