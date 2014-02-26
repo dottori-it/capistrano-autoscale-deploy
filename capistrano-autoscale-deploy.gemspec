@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'autoscale_deploy/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "capistrano-autoscale-deploy"
+  spec.name          = "capistrano_autoscale_deploy"
   spec.version       = Capistrano::AutoScaleDeploy::VERSION
   spec.authors       = ["Ami Mahloof"]
   spec.email         = ["ami.mahloof@gmail.com"]
