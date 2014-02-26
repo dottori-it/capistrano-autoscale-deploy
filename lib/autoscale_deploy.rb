@@ -4,7 +4,7 @@ require "aws-sdk"
 module Capistrano
   module AutoScaleDeploy
      
-    set :instances, {}
+    instances = {}
 
     def connect_ec2
       @ec2 ||= AWS::EC2.new({
