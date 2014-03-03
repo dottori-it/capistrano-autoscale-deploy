@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/capistrano-autoscale-deploy.png)](http://badge.fury.io/rb/capistrano-autoscale-deploy)
 # Capistrano AutoScale Deploy
 
 Capistrano plugin that enable discovery of instances in ec2 AutoScale groups into capistrano deployment script.
