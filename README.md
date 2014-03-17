@@ -32,9 +32,10 @@ require 'capistrano/autoscale_deploy'
 And set credentials with AmazonEC2ReadOnlyAccess permission in config/deploy.rb as:
 
 ```ruby
-set :access_key_id, "YOUR ACCESS KEY ID"
-set :secret_access_key, "YOUR SECRET ACCESS KEY"
-set :region, "eu-west-1"
+set :aws_default_region, 'eu-west-1'
+set :aws_access_key_id, "YOUR AWS KEY ID"
+set :aws_secret_access_key, "YOUR AWS SECRET KEY"
+
 ```
 
 ## Usage
