@@ -35,10 +35,12 @@ module Capistrano
               logger.info("unable to connect to ec2: #{e}")
             end
             
-            logger.info("found #{@ec2.instances.filter('tag-key', 'AutoScaleGroup').filter('tag-value', options[:AutoScaleGroup]).filter('instance-state-code', '16').count} servers for AutoScaleGroup: #{options[:AutoScaleGroup]} ")
-            
             # => filter('instance-state-code', '16') only running instances
-            @ec2.instances.filter('tag-key', 'AutoScaleGroup').filter('tag-value', options[:AutoScaleGroup]).filter('instance-state-code', '16').inject(instances){|acc, instance|
+            @ec2_instances = @ec2.instances.filter('tag-key', 'AutoScaleGroup').filter('tag-value', options[:AutoScaleGroup]).filter('instance-state-code', '16')
+            
+            logger.info("found #{@ec2_instances.count} servers for AutoScaleGroup: #{options[:AutoScaleGroup]} ")
+            
+            @ec2_instances.inject(instances){|acc, instance|
               acc[instance.ip_address] = options[:deploy_roles]  
               acc
             }

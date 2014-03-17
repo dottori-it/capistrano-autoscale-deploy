@@ -17,7 +17,7 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -43,7 +43,7 @@ set :aws_secret_access_key, "YOUR AWS SECRET KEY"
 In the capistrano deploy script / stage files add the following line
 
 ```ruby
-autoscale :AutoScaleGroup => 'name of your autoscale group (by Name tag)', :deploy_roles => [:app, :web, :db, :primary => true]
+autoscale :AutoScaleGroup => 'name of AutoScale group (by Name tag)', :deploy_roles => [:app, :web, :db, :primary => true]
 ```
 
 you can add more autoscale configs to deploy to multiple autoscale groups like a cluster
