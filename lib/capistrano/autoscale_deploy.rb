@@ -36,7 +36,7 @@ module Capistrano
             end
             
             # => filter('instance-state-code', '16') only running instances
-            @ec2_instances = @ec2.instances.filter('tag-key', 'AutoScaleGroup').filter('tag-value', options[:AutoScaleGroup]).filter('instance-state-code', '16')
+            @ec2_instances = @ec2.instances.filter('tag-key', 'aws:autoscaling:groupName').filter('tag-value', options[:AutoScaleGroup]).filter('instance-state-code', '16')
             
             logger.info("found #{@ec2_instances.count} servers for AutoScaleGroup: #{options[:AutoScaleGroup]} ")
             
