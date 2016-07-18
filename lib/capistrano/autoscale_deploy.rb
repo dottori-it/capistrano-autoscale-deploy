@@ -1,5 +1,5 @@
 require "capistrano"
-require "aws-sdk"
+require "aws-sdk-v1"
 
 module Capistrano
   module AutoScaleDeploy

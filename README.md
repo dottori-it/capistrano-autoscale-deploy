@@ -5,7 +5,7 @@ Capistrano plugin that enable discovery of instances in ec2 AutoScale groups int
 
 ## Requirements
 
-* aws-sdk
+* aws-sdk-v1
 * capistrano ~> 2.15.5
 
 
