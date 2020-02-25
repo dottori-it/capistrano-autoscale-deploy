@@ -41,7 +41,7 @@ module Capistrano
             logger.info("found #{@ec2_instances.count} servers for AutoScaleGroup: #{options[:AutoScaleGroup]} ")
             
             @ec2_instances.inject(instances){|acc, instance|
-              acc[instance.ip_address] = options[:deploy_roles]  
+              acc[instance.private_ip_address] = options[:deploy_roles]  
               acc
             }
 
